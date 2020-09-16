@@ -14,7 +14,12 @@ class CreateFailedJobsTable extends Migration
     public function up()
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
+            // ADD_LEO
+            if ($table->engine == 'firebird')
+                $table->increments('id');
+            else
+                $table->id();
+
             $table->text('connection');
             $table->text('queue');
             $table->longText('payload');
