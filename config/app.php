@@ -165,6 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
+        //ADD_LEO:
+        Firebird\FirebirdServiceProvider::class,
 
         /*
          * Application Service Providers...
